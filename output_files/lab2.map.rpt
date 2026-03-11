@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2
-Thu Mar 05 08:15:48 2026
+Wed Mar 11 11:03:10 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -41,16 +41,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Mar 05 08:15:48 2026           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 11 11:03:10 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab2                                            ;
-; Top-level Entity Name              ; fullAdder32bit                                  ;
+; Top-level Entity Name              ; ShiftLeft2_32                                   ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 72                                              ;
-;     Total combinational functions  ; 72                                              ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 98                                              ;
+; Total pins                         ; 64                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; fullAdder32bit     ; lab2               ;
+; Top-level entity name                                                      ; shiftLeft2_32      ; lab2               ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -156,85 +156,51 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                     ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path              ; Library ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
-; fullAdder.vhd                    ; yes             ; User VHDL File  ; C:/altera/13.0sp1/lab2/fullAdder.vhd      ;         ;
-; fullAdder32bit.vhd               ; yes             ; User VHDL File  ; C:/altera/13.0sp1/lab2/fullAdder32bit.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                           ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                    ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
+; shiftLeft2_32.vhd                ; yes             ; User VHDL File  ; C:/altera/13.0sp1/lab2/Simple_Cycle_Processor/shiftLeft2_32.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                         ;
-+---------------------------------------------+---------------------------------------+
-; Resource                                    ; Usage                                 ;
-+---------------------------------------------+---------------------------------------+
-; Estimated Total logic elements              ; 72                                    ;
-;                                             ;                                       ;
-; Total combinational functions               ; 72                                    ;
-; Logic element usage by number of LUT inputs ;                                       ;
-;     -- 4 input functions                    ; 16                                    ;
-;     -- 3 input functions                    ; 44                                    ;
-;     -- <=2 input functions                  ; 12                                    ;
-;                                             ;                                       ;
-; Logic elements by mode                      ;                                       ;
-;     -- normal mode                          ; 72                                    ;
-;     -- arithmetic mode                      ; 0                                     ;
-;                                             ;                                       ;
-; Total registers                             ; 0                                     ;
-;     -- Dedicated logic registers            ; 0                                     ;
-;     -- I/O registers                        ; 0                                     ;
-;                                             ;                                       ;
-; I/O pins                                    ; 98                                    ;
-; Embedded Multiplier 9-bit elements          ; 0                                     ;
-; Maximum fan-out node                        ; fullAdder:\gen_adder:0:FA_inst|Cout~0 ;
-; Maximum fan-out                             ; 3                                     ;
-; Total fan-out                               ; 351                                   ;
-; Average fan-out                             ; 1.31                                  ;
-+---------------------------------------------+---------------------------------------+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+;                                             ;       ;
+; Total combinational functions               ; 0     ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- <=2 input functions                  ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+;     -- Dedicated logic registers            ; 0     ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 64    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; Q[30] ;
+; Maximum fan-out                             ; 1     ;
+; Total fan-out                               ; 94    ;
+; Average fan-out                             ; 0.73  ;
++---------------------------------------------+-------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                               ;
-+--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
-; Compilation Hierarchy Node           ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                             ; Library Name ;
-+--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
-; |fullAdder32bit                      ; 72 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 98   ; 0            ; |fullAdder32bit                                 ; work         ;
-;    |fullAdder:\gen_adder:0:FA_inst|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:0:FA_inst  ; work         ;
-;    |fullAdder:\gen_adder:10:FA_inst| ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:10:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:11:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:11:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:12:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:12:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:13:FA_inst| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:13:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:14:FA_inst| ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:14:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:15:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:15:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:16:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:16:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:17:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:17:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:18:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:18:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:19:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:19:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:1:FA_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:1:FA_inst  ; work         ;
-;    |fullAdder:\gen_adder:20:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:20:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:21:FA_inst| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:21:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:22:FA_inst| ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:22:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:23:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:23:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:24:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:24:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:25:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:25:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:26:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:26:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:27:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:27:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:28:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:28:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:29:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:29:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:2:FA_inst|  ; 5 (5)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:2:FA_inst  ; work         ;
-;    |fullAdder:\gen_adder:30:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:30:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:31:FA_inst| ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:31:FA_inst ; work         ;
-;    |fullAdder:\gen_adder:3:FA_inst|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:3:FA_inst  ; work         ;
-;    |fullAdder:\gen_adder:4:FA_inst|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:4:FA_inst  ; work         ;
-;    |fullAdder:\gen_adder:5:FA_inst|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:5:FA_inst  ; work         ;
-;    |fullAdder:\gen_adder:6:FA_inst|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:6:FA_inst  ; work         ;
-;    |fullAdder:\gen_adder:7:FA_inst|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:7:FA_inst  ; work         ;
-;    |fullAdder:\gen_adder:8:FA_inst|  ; 2 (2)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:8:FA_inst  ; work         ;
-;    |fullAdder:\gen_adder:9:FA_inst|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |fullAdder32bit|fullAdder:\gen_adder:9:FA_inst  ; work         ;
-+--------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------+--------------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
+; |ShiftLeft2_32             ; 0 (0)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 64   ; 0            ; |ShiftLeft2_32      ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -268,7 +234,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Thu Mar 05 08:15:47 2026
+    Info: Processing started: Wed Mar 11 11:03:08 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file signextend.vhd
@@ -287,8 +253,8 @@ Info (12021): Found 2 design units, including 1 entities, in source file shiftle
     Info (12022): Found design unit 1: shiftLeft2_26to28-rtl
     Info (12023): Found entity 1: shiftLeft2_26to28
 Info (12021): Found 2 design units, including 1 entities, in source file shiftleft2_32.vhd
-    Info (12022): Found design unit 1: shiftLeft2_32-rtl
-    Info (12023): Found entity 1: shiftLeft2_32
+    Info (12022): Found design unit 1: ShiftLeft2_32-rtl
+    Info (12023): Found entity 1: ShiftLeft2_32
 Info (12021): Found 2 design units, including 1 entities, in source file pc.vhd
     Info (12022): Found design unit 1: PC-rtl
     Info (12023): Found entity 1: PC
@@ -298,19 +264,26 @@ Info (12021): Found 2 design units, including 1 entities, in source file fulladd
 Info (12021): Found 2 design units, including 1 entities, in source file fulladder32bit.vhd
     Info (12022): Found design unit 1: fullAdder32bit-structural
     Info (12023): Found entity 1: fullAdder32bit
-Info (12127): Elaborating entity "fullAdder32bit" for the top level hierarchy
-Info (12128): Elaborating entity "fullAdder" for hierarchy "fullAdder:\gen_adder:0:FA_inst"
-Info (286030): Timing-Driven Synthesis is running
+Info (12021): Found 2 design units, including 1 entities, in source file register_32.vhd
+    Info (12022): Found design unit 1: Register_32-rtl
+    Info (12023): Found entity 1: Register_32
+Info (12127): Elaborating entity "shiftLeft2_32" for the top level hierarchy
+Warning (10873): Using initial value X (don't care) for net "Qplus[1..0]" at shiftLeft2_32.vhd(7)
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "Qplus[0]" is stuck at GND
+    Warning (13410): Pin "Qplus[1]" is stuck at GND
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 170 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 65 input pins
-    Info (21059): Implemented 33 output pins
-    Info (21061): Implemented 72 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4658 megabytes
-    Info: Processing ended: Thu Mar 05 08:15:48 2026
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+Warning (21074): Design contains 2 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "Q[30]"
+    Warning (15610): No output dependent on input pin "Q[31]"
+Info (21057): Implemented 64 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 32 input pins
+    Info (21059): Implemented 32 output pins
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4666 megabytes
+    Info: Processing ended: Wed Mar 11 11:03:10 2026
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
 
 
