@@ -1,0 +1,453 @@
+|fullAdder32bit
+A[0] => fullAdder:gen_adder:0:FA_inst.A
+A[1] => fullAdder:gen_adder:1:FA_inst.A
+A[2] => fullAdder:gen_adder:2:FA_inst.A
+A[3] => fullAdder:gen_adder:3:FA_inst.A
+A[4] => fullAdder:gen_adder:4:FA_inst.A
+A[5] => fullAdder:gen_adder:5:FA_inst.A
+A[6] => fullAdder:gen_adder:6:FA_inst.A
+A[7] => fullAdder:gen_adder:7:FA_inst.A
+A[8] => fullAdder:gen_adder:8:FA_inst.A
+A[9] => fullAdder:gen_adder:9:FA_inst.A
+A[10] => fullAdder:gen_adder:10:FA_inst.A
+A[11] => fullAdder:gen_adder:11:FA_inst.A
+A[12] => fullAdder:gen_adder:12:FA_inst.A
+A[13] => fullAdder:gen_adder:13:FA_inst.A
+A[14] => fullAdder:gen_adder:14:FA_inst.A
+A[15] => fullAdder:gen_adder:15:FA_inst.A
+A[16] => fullAdder:gen_adder:16:FA_inst.A
+A[17] => fullAdder:gen_adder:17:FA_inst.A
+A[18] => fullAdder:gen_adder:18:FA_inst.A
+A[19] => fullAdder:gen_adder:19:FA_inst.A
+A[20] => fullAdder:gen_adder:20:FA_inst.A
+A[21] => fullAdder:gen_adder:21:FA_inst.A
+A[22] => fullAdder:gen_adder:22:FA_inst.A
+A[23] => fullAdder:gen_adder:23:FA_inst.A
+A[24] => fullAdder:gen_adder:24:FA_inst.A
+A[25] => fullAdder:gen_adder:25:FA_inst.A
+A[26] => fullAdder:gen_adder:26:FA_inst.A
+A[27] => fullAdder:gen_adder:27:FA_inst.A
+A[28] => fullAdder:gen_adder:28:FA_inst.A
+A[29] => fullAdder:gen_adder:29:FA_inst.A
+A[30] => fullAdder:gen_adder:30:FA_inst.A
+A[31] => fullAdder:gen_adder:31:FA_inst.A
+B[0] => fullAdder:gen_adder:0:FA_inst.B
+B[1] => fullAdder:gen_adder:1:FA_inst.B
+B[2] => fullAdder:gen_adder:2:FA_inst.B
+B[3] => fullAdder:gen_adder:3:FA_inst.B
+B[4] => fullAdder:gen_adder:4:FA_inst.B
+B[5] => fullAdder:gen_adder:5:FA_inst.B
+B[6] => fullAdder:gen_adder:6:FA_inst.B
+B[7] => fullAdder:gen_adder:7:FA_inst.B
+B[8] => fullAdder:gen_adder:8:FA_inst.B
+B[9] => fullAdder:gen_adder:9:FA_inst.B
+B[10] => fullAdder:gen_adder:10:FA_inst.B
+B[11] => fullAdder:gen_adder:11:FA_inst.B
+B[12] => fullAdder:gen_adder:12:FA_inst.B
+B[13] => fullAdder:gen_adder:13:FA_inst.B
+B[14] => fullAdder:gen_adder:14:FA_inst.B
+B[15] => fullAdder:gen_adder:15:FA_inst.B
+B[16] => fullAdder:gen_adder:16:FA_inst.B
+B[17] => fullAdder:gen_adder:17:FA_inst.B
+B[18] => fullAdder:gen_adder:18:FA_inst.B
+B[19] => fullAdder:gen_adder:19:FA_inst.B
+B[20] => fullAdder:gen_adder:20:FA_inst.B
+B[21] => fullAdder:gen_adder:21:FA_inst.B
+B[22] => fullAdder:gen_adder:22:FA_inst.B
+B[23] => fullAdder:gen_adder:23:FA_inst.B
+B[24] => fullAdder:gen_adder:24:FA_inst.B
+B[25] => fullAdder:gen_adder:25:FA_inst.B
+B[26] => fullAdder:gen_adder:26:FA_inst.B
+B[27] => fullAdder:gen_adder:27:FA_inst.B
+B[28] => fullAdder:gen_adder:28:FA_inst.B
+B[29] => fullAdder:gen_adder:29:FA_inst.B
+B[30] => fullAdder:gen_adder:30:FA_inst.B
+B[31] => fullAdder:gen_adder:31:FA_inst.B
+Cin => fullAdder:gen_adder:0:FA_inst.Cin
+Sum[0] <= fullAdder:gen_adder:0:FA_inst.S
+Sum[1] <= fullAdder:gen_adder:1:FA_inst.S
+Sum[2] <= fullAdder:gen_adder:2:FA_inst.S
+Sum[3] <= fullAdder:gen_adder:3:FA_inst.S
+Sum[4] <= fullAdder:gen_adder:4:FA_inst.S
+Sum[5] <= fullAdder:gen_adder:5:FA_inst.S
+Sum[6] <= fullAdder:gen_adder:6:FA_inst.S
+Sum[7] <= fullAdder:gen_adder:7:FA_inst.S
+Sum[8] <= fullAdder:gen_adder:8:FA_inst.S
+Sum[9] <= fullAdder:gen_adder:9:FA_inst.S
+Sum[10] <= fullAdder:gen_adder:10:FA_inst.S
+Sum[11] <= fullAdder:gen_adder:11:FA_inst.S
+Sum[12] <= fullAdder:gen_adder:12:FA_inst.S
+Sum[13] <= fullAdder:gen_adder:13:FA_inst.S
+Sum[14] <= fullAdder:gen_adder:14:FA_inst.S
+Sum[15] <= fullAdder:gen_adder:15:FA_inst.S
+Sum[16] <= fullAdder:gen_adder:16:FA_inst.S
+Sum[17] <= fullAdder:gen_adder:17:FA_inst.S
+Sum[18] <= fullAdder:gen_adder:18:FA_inst.S
+Sum[19] <= fullAdder:gen_adder:19:FA_inst.S
+Sum[20] <= fullAdder:gen_adder:20:FA_inst.S
+Sum[21] <= fullAdder:gen_adder:21:FA_inst.S
+Sum[22] <= fullAdder:gen_adder:22:FA_inst.S
+Sum[23] <= fullAdder:gen_adder:23:FA_inst.S
+Sum[24] <= fullAdder:gen_adder:24:FA_inst.S
+Sum[25] <= fullAdder:gen_adder:25:FA_inst.S
+Sum[26] <= fullAdder:gen_adder:26:FA_inst.S
+Sum[27] <= fullAdder:gen_adder:27:FA_inst.S
+Sum[28] <= fullAdder:gen_adder:28:FA_inst.S
+Sum[29] <= fullAdder:gen_adder:29:FA_inst.S
+Sum[30] <= fullAdder:gen_adder:30:FA_inst.S
+Sum[31] <= fullAdder:gen_adder:31:FA_inst.S
+Cout <= fullAdder:gen_adder:31:FA_inst.Cout
+
+
+|fullAdder32bit|fullAdder:\gen_adder:0:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:1:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:2:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:3:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:4:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:5:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:6:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:7:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:8:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:9:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:10:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:11:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:12:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:13:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:14:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:15:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:16:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:17:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:18:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:19:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:20:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:21:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:22:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:23:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:24:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:25:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:26:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:27:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:28:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:29:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:30:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|fullAdder32bit|fullAdder:\gen_adder:31:FA_inst
+A => S.IN0
+A => Cout.IN0
+B => S.IN1
+B => Cout.IN1
+Cin => S.IN1
+Cin => Cout.IN1
+S <= S.DB_MAX_OUTPUT_PORT_TYPE
+Cout <= Cout.DB_MAX_OUTPUT_PORT_TYPE
+
+
