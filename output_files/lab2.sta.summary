@@ -2,40 +2,40 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'RegWrite'
-Slack : -2.307
-TNS   : -640.878
+Type  : Slow 1200mV 85C Model Setup 'Address[2]'
+Slack : -2.509
+TNS   : -702.101
 
-Type  : Slow 1200mV 85C Model Hold 'RegWrite'
-Slack : 0.011
-TNS   : 0.000
+Type  : Slow 1200mV 85C Model Hold 'Address[2]'
+Slack : -0.058
+TNS   : -0.108
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'RegWrite'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Address[2]'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Slow 1200mV 0C Model Setup 'RegWrite'
-Slack : -2.274
-TNS   : -726.224
+Type  : Slow 1200mV 0C Model Setup 'Address[2]'
+Slack : -2.488
+TNS   : -703.562
 
-Type  : Slow 1200mV 0C Model Hold 'RegWrite'
-Slack : 0.187
+Type  : Slow 1200mV 0C Model Hold 'Address[2]'
+Slack : 0.007
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'RegWrite'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Address[2]'
 Slack : -3.000
 TNS   : -3.000
 
-Type  : Fast 1200mV 0C Model Setup 'RegWrite'
-Slack : -0.369
-TNS   : -0.791
+Type  : Fast 1200mV 0C Model Setup 'Address[2]'
+Slack : -1.027
+TNS   : -168.313
 
-Type  : Fast 1200mV 0C Model Hold 'RegWrite'
-Slack : -0.436
-TNS   : -172.895
+Type  : Fast 1200mV 0C Model Hold 'Address[2]'
+Slack : -0.292
+TNS   : -74.756
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'RegWrite'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Address[2]'
 Slack : -3.000
-TNS   : -703.297
+TNS   : -344.367
 
 ------------------------------------------------------------
