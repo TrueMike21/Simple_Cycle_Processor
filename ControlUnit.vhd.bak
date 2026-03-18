@@ -17,7 +17,6 @@ entity ControlUnit is
 end ControlUnit;
 
 architecture Structural of ControlUnit is
-    
     signal R_type, lw, sw, beq, j : std_logic;
 begin
     -- 1. Identify the Instruction (Decoding the 6-bit Opcode)

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab2
-Wed Mar 18 04:26:42 2026
+Wed Mar 18 07:37:57 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -41,16 +41,16 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar 18 04:26:42 2026           ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 18 07:37:57 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; lab2                                            ;
-; Top-level Entity Name              ; ControlUnit                                     ;
+; Top-level Entity Name              ; mux2to1_32bits                                  ;
 ; Family                             ; Cyclone IV E                                    ;
-; Total logic elements               ; 9                                               ;
-;     Total combinational functions  ; 9                                               ;
+; Total logic elements               ; 32                                              ;
+;     Total combinational functions  ; 32                                              ;
 ;     Dedicated logic registers      ; 0                                               ;
 ; Total registers                    ; 0                                               ;
-; Total pins                         ; 16                                              ;
+; Total pins                         ; 97                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 0                                               ;
 ; Embedded Multiplier 9-bit elements ; 0                                               ;
@@ -64,7 +64,7 @@ applicable agreement for further details.
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Device                                                                     ; EP4CE115F29C7      ;                    ;
-; Top-level entity name                                                      ; ControlUnit        ; lab2               ;
+; Top-level entity name                                                      ; mux2to1_32bits     ; lab2               ;
 ; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
@@ -156,52 +156,85 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------+--------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                  ; Library ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
-; ControlUnit.vhd                  ; yes             ; User VHDL File  ; C:/altera/13.0sp1/lab2/Simple_Cycle_Processor/ControlUnit.vhd ;         ;
-+----------------------------------+-----------------+-----------------+---------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                            ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                     ; Library ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
+; mux2to1.vhd                      ; yes             ; User VHDL File  ; C:/altera/13.0sp1/lab2/Simple_Cycle_Processor/mux2to1.vhd        ;         ;
+; mux2to1_32bits.vhd               ; yes             ; User VHDL File  ; C:/altera/13.0sp1/lab2/Simple_Cycle_Processor/mux2to1_32bits.vhd ;         ;
++----------------------------------+-----------------+-----------------+------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary            ;
-+---------------------------------------------+----------+
-; Resource                                    ; Usage    ;
-+---------------------------------------------+----------+
-; Estimated Total logic elements              ; 9        ;
-;                                             ;          ;
-; Total combinational functions               ; 9        ;
-; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 2        ;
-;     -- 3 input functions                    ; 4        ;
-;     -- <=2 input functions                  ; 3        ;
-;                                             ;          ;
-; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 9        ;
-;     -- arithmetic mode                      ; 0        ;
-;                                             ;          ;
-; Total registers                             ; 0        ;
-;     -- Dedicated logic registers            ; 0        ;
-;     -- I/O registers                        ; 0        ;
-;                                             ;          ;
-; I/O pins                                    ; 16       ;
-; Embedded Multiplier 9-bit elements          ; 0        ;
-; Maximum fan-out node                        ; Equal1~0 ;
-; Maximum fan-out                             ; 4        ;
-; Total fan-out                               ; 52       ;
-; Average fan-out                             ; 1.27     ;
-+---------------------------------------------+----------+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 32        ;
+;                                             ;           ;
+; Total combinational functions               ; 32        ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 0         ;
+;     -- 3 input functions                    ; 32        ;
+;     -- <=2 input functions                  ; 0         ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 32        ;
+;     -- arithmetic mode                      ; 0         ;
+;                                             ;           ;
+; Total registers                             ; 0         ;
+;     -- Dedicated logic registers            ; 0         ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 97        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; Sel~input ;
+; Maximum fan-out                             ; 32        ;
+; Total fan-out                               ; 225       ;
+; Average fan-out                             ; 1.00      ;
++---------------------------------------------+-----------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name ; Library Name ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
-; |ControlUnit               ; 9 (9)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 16   ; 0            ; |ControlUnit        ; work         ;
-+----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+---------------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                   ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
+; Compilation Hierarchy Node     ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                       ; Library Name ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
+; |mux2to1_32bits                ; 32 (0)            ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 97   ; 0            ; |mux2to1_32bits                           ; work         ;
+;    |mux2to1:\gen_mux:0:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:0:u_mux  ; work         ;
+;    |mux2to1:\gen_mux:10:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:10:u_mux ; work         ;
+;    |mux2to1:\gen_mux:11:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:11:u_mux ; work         ;
+;    |mux2to1:\gen_mux:12:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:12:u_mux ; work         ;
+;    |mux2to1:\gen_mux:13:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:13:u_mux ; work         ;
+;    |mux2to1:\gen_mux:14:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:14:u_mux ; work         ;
+;    |mux2to1:\gen_mux:15:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:15:u_mux ; work         ;
+;    |mux2to1:\gen_mux:16:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:16:u_mux ; work         ;
+;    |mux2to1:\gen_mux:17:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:17:u_mux ; work         ;
+;    |mux2to1:\gen_mux:18:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:18:u_mux ; work         ;
+;    |mux2to1:\gen_mux:19:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:19:u_mux ; work         ;
+;    |mux2to1:\gen_mux:1:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:1:u_mux  ; work         ;
+;    |mux2to1:\gen_mux:20:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:20:u_mux ; work         ;
+;    |mux2to1:\gen_mux:21:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:21:u_mux ; work         ;
+;    |mux2to1:\gen_mux:22:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:22:u_mux ; work         ;
+;    |mux2to1:\gen_mux:23:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:23:u_mux ; work         ;
+;    |mux2to1:\gen_mux:24:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:24:u_mux ; work         ;
+;    |mux2to1:\gen_mux:25:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:25:u_mux ; work         ;
+;    |mux2to1:\gen_mux:26:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:26:u_mux ; work         ;
+;    |mux2to1:\gen_mux:27:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:27:u_mux ; work         ;
+;    |mux2to1:\gen_mux:28:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:28:u_mux ; work         ;
+;    |mux2to1:\gen_mux:29:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:29:u_mux ; work         ;
+;    |mux2to1:\gen_mux:2:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:2:u_mux  ; work         ;
+;    |mux2to1:\gen_mux:30:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:30:u_mux ; work         ;
+;    |mux2to1:\gen_mux:31:u_mux| ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:31:u_mux ; work         ;
+;    |mux2to1:\gen_mux:3:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:3:u_mux  ; work         ;
+;    |mux2to1:\gen_mux:4:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:4:u_mux  ; work         ;
+;    |mux2to1:\gen_mux:5:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:5:u_mux  ; work         ;
+;    |mux2to1:\gen_mux:6:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:6:u_mux  ; work         ;
+;    |mux2to1:\gen_mux:7:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:7:u_mux  ; work         ;
+;    |mux2to1:\gen_mux:8:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:8:u_mux  ; work         ;
+;    |mux2to1:\gen_mux:9:u_mux|  ; 1 (1)             ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |mux2to1_32bits|mux2to1:\gen_mux:9:u_mux  ; work         ;
++--------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -235,7 +268,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Wed Mar 18 04:26:39 2026
+    Info: Processing started: Wed Mar 18 07:37:55 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2 -c lab2
 Warning (20028): Parallel compilation is not licensed and has been disabled
 Info (12021): Found 2 design units, including 1 entities, in source file signextend.vhd
@@ -286,18 +319,22 @@ Info (12021): Found 2 design units, including 1 entities, in source file datamem
 Info (12021): Found 2 design units, including 1 entities, in source file controlunit.vhd
     Info (12022): Found design unit 1: ControlUnit-Structural
     Info (12023): Found entity 1: ControlUnit
-Info (12127): Elaborating entity "ControlUnit" for the top level hierarchy
+Info (12021): Found 2 design units, including 1 entities, in source file mux2to1_32bits.vhd
+    Info (12022): Found design unit 1: mux2to1_32bits-structural
+    Info (12023): Found entity 1: mux2to1_32bits
+Info (12127): Elaborating entity "mux2to1_32bits" for the top level hierarchy
+Info (12128): Elaborating entity "mux2to1" for hierarchy "mux2to1:\gen_mux:0:u_mux"
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 25 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 6 input pins
-    Info (21059): Implemented 10 output pins
-    Info (21061): Implemented 9 logic cells
+Info (21057): Implemented 129 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 65 input pins
+    Info (21059): Implemented 32 output pins
+    Info (21061): Implemented 32 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4658 megabytes
-    Info: Processing ended: Wed Mar 18 04:26:42 2026
+    Info: Peak virtual memory: 4650 megabytes
+    Info: Processing ended: Wed Mar 18 07:37:58 2026
     Info: Elapsed time: 00:00:03
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Total CPU time (on all processors): 00:00:02
 
 

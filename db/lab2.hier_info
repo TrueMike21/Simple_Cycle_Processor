@@ -1,43 +1,387 @@
-|ControlUnit
-Opcode[0] => Equal0.IN5
-Opcode[0] => Equal1.IN5
-Opcode[0] => Equal2.IN5
-Opcode[0] => Equal3.IN4
-Opcode[0] => Equal4.IN4
-Opcode[1] => Equal0.IN4
-Opcode[1] => Equal1.IN4
-Opcode[1] => Equal2.IN4
-Opcode[1] => Equal3.IN3
-Opcode[1] => Equal4.IN5
-Opcode[2] => Equal0.IN3
-Opcode[2] => Equal1.IN2
-Opcode[2] => Equal2.IN1
-Opcode[2] => Equal3.IN5
-Opcode[2] => Equal4.IN3
-Opcode[3] => Equal0.IN2
-Opcode[3] => Equal1.IN1
-Opcode[3] => Equal2.IN3
-Opcode[3] => Equal3.IN2
-Opcode[3] => Equal4.IN2
-Opcode[4] => Equal0.IN1
-Opcode[4] => Equal1.IN0
-Opcode[4] => Equal2.IN0
-Opcode[4] => Equal3.IN1
-Opcode[4] => Equal4.IN1
-Opcode[5] => Equal0.IN0
-Opcode[5] => Equal1.IN3
-Opcode[5] => Equal2.IN2
-Opcode[5] => Equal3.IN0
-Opcode[5] => Equal4.IN0
-RegDst <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
-Jump <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
-Branch <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
-MemRead <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
-MemtoReg <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
-ALUOp[0] <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
-ALUOp[1] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
-MemWrite <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
-ALUSrc <= ALUSrc.DB_MAX_OUTPUT_PORT_TYPE
-RegWrite <= RegWrite.DB_MAX_OUTPUT_PORT_TYPE
+|mux2to1_32bits
+Sel => mux2to1:gen_mux:0:u_mux.Sel
+Sel => mux2to1:gen_mux:1:u_mux.Sel
+Sel => mux2to1:gen_mux:2:u_mux.Sel
+Sel => mux2to1:gen_mux:3:u_mux.Sel
+Sel => mux2to1:gen_mux:4:u_mux.Sel
+Sel => mux2to1:gen_mux:5:u_mux.Sel
+Sel => mux2to1:gen_mux:6:u_mux.Sel
+Sel => mux2to1:gen_mux:7:u_mux.Sel
+Sel => mux2to1:gen_mux:8:u_mux.Sel
+Sel => mux2to1:gen_mux:9:u_mux.Sel
+Sel => mux2to1:gen_mux:10:u_mux.Sel
+Sel => mux2to1:gen_mux:11:u_mux.Sel
+Sel => mux2to1:gen_mux:12:u_mux.Sel
+Sel => mux2to1:gen_mux:13:u_mux.Sel
+Sel => mux2to1:gen_mux:14:u_mux.Sel
+Sel => mux2to1:gen_mux:15:u_mux.Sel
+Sel => mux2to1:gen_mux:16:u_mux.Sel
+Sel => mux2to1:gen_mux:17:u_mux.Sel
+Sel => mux2to1:gen_mux:18:u_mux.Sel
+Sel => mux2to1:gen_mux:19:u_mux.Sel
+Sel => mux2to1:gen_mux:20:u_mux.Sel
+Sel => mux2to1:gen_mux:21:u_mux.Sel
+Sel => mux2to1:gen_mux:22:u_mux.Sel
+Sel => mux2to1:gen_mux:23:u_mux.Sel
+Sel => mux2to1:gen_mux:24:u_mux.Sel
+Sel => mux2to1:gen_mux:25:u_mux.Sel
+Sel => mux2to1:gen_mux:26:u_mux.Sel
+Sel => mux2to1:gen_mux:27:u_mux.Sel
+Sel => mux2to1:gen_mux:28:u_mux.Sel
+Sel => mux2to1:gen_mux:29:u_mux.Sel
+Sel => mux2to1:gen_mux:30:u_mux.Sel
+Sel => mux2to1:gen_mux:31:u_mux.Sel
+A[0] => mux2to1:gen_mux:0:u_mux.A
+A[1] => mux2to1:gen_mux:1:u_mux.A
+A[2] => mux2to1:gen_mux:2:u_mux.A
+A[3] => mux2to1:gen_mux:3:u_mux.A
+A[4] => mux2to1:gen_mux:4:u_mux.A
+A[5] => mux2to1:gen_mux:5:u_mux.A
+A[6] => mux2to1:gen_mux:6:u_mux.A
+A[7] => mux2to1:gen_mux:7:u_mux.A
+A[8] => mux2to1:gen_mux:8:u_mux.A
+A[9] => mux2to1:gen_mux:9:u_mux.A
+A[10] => mux2to1:gen_mux:10:u_mux.A
+A[11] => mux2to1:gen_mux:11:u_mux.A
+A[12] => mux2to1:gen_mux:12:u_mux.A
+A[13] => mux2to1:gen_mux:13:u_mux.A
+A[14] => mux2to1:gen_mux:14:u_mux.A
+A[15] => mux2to1:gen_mux:15:u_mux.A
+A[16] => mux2to1:gen_mux:16:u_mux.A
+A[17] => mux2to1:gen_mux:17:u_mux.A
+A[18] => mux2to1:gen_mux:18:u_mux.A
+A[19] => mux2to1:gen_mux:19:u_mux.A
+A[20] => mux2to1:gen_mux:20:u_mux.A
+A[21] => mux2to1:gen_mux:21:u_mux.A
+A[22] => mux2to1:gen_mux:22:u_mux.A
+A[23] => mux2to1:gen_mux:23:u_mux.A
+A[24] => mux2to1:gen_mux:24:u_mux.A
+A[25] => mux2to1:gen_mux:25:u_mux.A
+A[26] => mux2to1:gen_mux:26:u_mux.A
+A[27] => mux2to1:gen_mux:27:u_mux.A
+A[28] => mux2to1:gen_mux:28:u_mux.A
+A[29] => mux2to1:gen_mux:29:u_mux.A
+A[30] => mux2to1:gen_mux:30:u_mux.A
+A[31] => mux2to1:gen_mux:31:u_mux.A
+B[0] => mux2to1:gen_mux:0:u_mux.B
+B[1] => mux2to1:gen_mux:1:u_mux.B
+B[2] => mux2to1:gen_mux:2:u_mux.B
+B[3] => mux2to1:gen_mux:3:u_mux.B
+B[4] => mux2to1:gen_mux:4:u_mux.B
+B[5] => mux2to1:gen_mux:5:u_mux.B
+B[6] => mux2to1:gen_mux:6:u_mux.B
+B[7] => mux2to1:gen_mux:7:u_mux.B
+B[8] => mux2to1:gen_mux:8:u_mux.B
+B[9] => mux2to1:gen_mux:9:u_mux.B
+B[10] => mux2to1:gen_mux:10:u_mux.B
+B[11] => mux2to1:gen_mux:11:u_mux.B
+B[12] => mux2to1:gen_mux:12:u_mux.B
+B[13] => mux2to1:gen_mux:13:u_mux.B
+B[14] => mux2to1:gen_mux:14:u_mux.B
+B[15] => mux2to1:gen_mux:15:u_mux.B
+B[16] => mux2to1:gen_mux:16:u_mux.B
+B[17] => mux2to1:gen_mux:17:u_mux.B
+B[18] => mux2to1:gen_mux:18:u_mux.B
+B[19] => mux2to1:gen_mux:19:u_mux.B
+B[20] => mux2to1:gen_mux:20:u_mux.B
+B[21] => mux2to1:gen_mux:21:u_mux.B
+B[22] => mux2to1:gen_mux:22:u_mux.B
+B[23] => mux2to1:gen_mux:23:u_mux.B
+B[24] => mux2to1:gen_mux:24:u_mux.B
+B[25] => mux2to1:gen_mux:25:u_mux.B
+B[26] => mux2to1:gen_mux:26:u_mux.B
+B[27] => mux2to1:gen_mux:27:u_mux.B
+B[28] => mux2to1:gen_mux:28:u_mux.B
+B[29] => mux2to1:gen_mux:29:u_mux.B
+B[30] => mux2to1:gen_mux:30:u_mux.B
+B[31] => mux2to1:gen_mux:31:u_mux.B
+C[0] <= mux2to1:gen_mux:0:u_mux.C
+C[1] <= mux2to1:gen_mux:1:u_mux.C
+C[2] <= mux2to1:gen_mux:2:u_mux.C
+C[3] <= mux2to1:gen_mux:3:u_mux.C
+C[4] <= mux2to1:gen_mux:4:u_mux.C
+C[5] <= mux2to1:gen_mux:5:u_mux.C
+C[6] <= mux2to1:gen_mux:6:u_mux.C
+C[7] <= mux2to1:gen_mux:7:u_mux.C
+C[8] <= mux2to1:gen_mux:8:u_mux.C
+C[9] <= mux2to1:gen_mux:9:u_mux.C
+C[10] <= mux2to1:gen_mux:10:u_mux.C
+C[11] <= mux2to1:gen_mux:11:u_mux.C
+C[12] <= mux2to1:gen_mux:12:u_mux.C
+C[13] <= mux2to1:gen_mux:13:u_mux.C
+C[14] <= mux2to1:gen_mux:14:u_mux.C
+C[15] <= mux2to1:gen_mux:15:u_mux.C
+C[16] <= mux2to1:gen_mux:16:u_mux.C
+C[17] <= mux2to1:gen_mux:17:u_mux.C
+C[18] <= mux2to1:gen_mux:18:u_mux.C
+C[19] <= mux2to1:gen_mux:19:u_mux.C
+C[20] <= mux2to1:gen_mux:20:u_mux.C
+C[21] <= mux2to1:gen_mux:21:u_mux.C
+C[22] <= mux2to1:gen_mux:22:u_mux.C
+C[23] <= mux2to1:gen_mux:23:u_mux.C
+C[24] <= mux2to1:gen_mux:24:u_mux.C
+C[25] <= mux2to1:gen_mux:25:u_mux.C
+C[26] <= mux2to1:gen_mux:26:u_mux.C
+C[27] <= mux2to1:gen_mux:27:u_mux.C
+C[28] <= mux2to1:gen_mux:28:u_mux.C
+C[29] <= mux2to1:gen_mux:29:u_mux.C
+C[30] <= mux2to1:gen_mux:30:u_mux.C
+C[31] <= mux2to1:gen_mux:31:u_mux.C
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:0:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:1:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:2:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:3:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:4:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:5:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:6:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:7:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:8:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:9:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:10:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:11:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:12:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:13:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:14:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:15:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:16:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:17:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:18:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:19:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:20:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:21:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:22:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:23:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:24:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:25:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:26:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:27:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:28:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:29:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:30:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|mux2to1_32bits|mux2to1:\gen_mux:31:u_mux
+Sel => C.IN0
+Sel => C.IN0
+A => C.IN1
+B => C.IN1
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
 
 
