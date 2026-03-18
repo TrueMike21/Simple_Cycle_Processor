@@ -1,0 +1,119 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity SingleCycleProcessor is
+    port (
+        clk   : in std_logic;
+        reset : in std_logic
+    );
+end entity SingleCycleProcessor;
+
+architecture Structural of SingleCycleProcessor is
+    component ALU_Control is
+    port (
+        ALUOp      : in  std_logic_vector(1 downto 0);
+        Funct      : in  std_logic_vector(3 downto 0);
+        ALU_select : out std_logic_vector(3 downto 0) -- Output to ALU
+    );
+    end component;
+
+    -- 1. COMPONENT DECLARATIONS (Based on your provided file)
+    component PC is
+        port(Qin: in std_logic_vector(31 downto 0); load: in std_logic; clk: in std_logic; Qout: out std_logic_vector(31 downto 0));
+    end component; 
+
+    component InstructionMemory is
+        port(Read_address : in std_logic_vector(31 downto 0); Instruction : out std_logic_vector(31 downto 0));
+    end component; 
+
+    component ControlUnit is
+        port(Opcode: in std_logic_vector(5 downto 0); RegDst, Jump, Branch, MemRead, MemtoReg, MemWrite, ALUSrc, RegWrite: out std_logic; ALUOp: out std_logic_vector(1 downto 0));
+    end component; 
+
+    component RegisterFile is
+        port(clk, RegWrite: in std_logic; Read_reg_1, Read_reg_2, Write_reg: in std_logic_vector(4 downto 0); Write_data: in std_logic_vector(31 downto 0); Read_data_1, Read_data_2: out std_logic_vector(31 downto 0));
+    end component; 
+    component ALU is
+        port(SrcA, SrcB: in std_logic_vector(31 downto 0); ALUControl: in std_logic_vector(3 downto 0); ALUResult: out std_logic_vector(31 downto 0); Zero: out std_logic);
+    end component; 
+
+    component DataMemory is
+        port(clk, MemWrite, MemRead: in std_logic; Address, Write_data: in std_logic_vector(31 downto 0); Read_data: out std_logic_vector(31 downto 0));
+    end component; 
+
+    component signExtend is
+        port(Q: in std_logic_vector(15 downto 0); Qplus: out std_logic_vector(31 downto 0));
+    end component; 
+
+    component mux2to1_5bits is
+        port(Sel: in std_logic; A, B: in std_logic_vector(4 downto 0); C: out std_logic_vector(4 downto 0));
+    end component; 
+
+    component ShiftLeft2_32 is
+        port(Q: in std_logic_vector(31 downto 0); Qplus: out std_logic_vector(31 downto 0));
+    end component; 
+
+    -- Your requested 32-bit Adder component
+    component fullAdder_32 is
+        port(A, B: in std_logic_vector(31 downto 0); Cin: in std_logic; Sum: out std_logic_vector(31 downto 0); Cout: out std_logic);
+    end component;
+
+    -- 2. INTERNAL SIGNAL WIRES
+    signal pc_current, pc_next, pc_plus_4, pc_branch, pc_jump, jump_addr_32 : std_logic_vector(31 downto 0);
+    signal instruction : std_logic_vector(31 downto 0);
+    signal reg_dst, jump, branch, mem_read, mem_to_reg, mem_write, alu_src, reg_write, alu_zero, pc_src : std_logic;
+    signal alu_op : std_logic_vector(1 downto 0);
+    signal alu_ctrl_sel : std_logic_vector(3 downto 0);
+    signal write_reg : std_logic_vector(4 downto 0);
+    signal read_data_1, read_data_2, write_data_reg, sign_ext_imm, alu_in_b, alu_out, mem_out, br_offset : std_logic_vector(31 downto 0);
+
+begin
+
+    -- INSTRUCTION FETCH
+    U_PC: PC port map(Qin => pc_next, load => '1', clk => clk, Qout => pc_current); 
+    
+    U_ADD4: fullAdder32bit port map(A => pc_current, B => x"00000004", Cin => '0', Sum => pc_plus_4, Cout => open);
+    
+    U_IMEM: InstructionMemory port map(Read_address => pc_current, Instruction => instruction); 
+
+    -- DECODE & CONTROL
+    U_CTRL: ControlUnit port map(Opcode => instruction(31 downto 26), RegDst => reg_dst, Jump => jump, Branch => branch, 
+                                 MemRead => mem_read, MemtoReg => mem_to_reg, ALUOp => alu_op, MemWrite => mem_write, 
+                                 ALUSrc => alu_src, RegWrite => reg_write); 
+
+    U_MUX_REG: mux2to1_5bits port map(Sel => reg_dst, A => instruction(20 downto 16), B => instruction(15 downto 11), C => write_reg); 
+
+    U_RF: RegisterFile port map(clk => clk, RegWrite => reg_write, Read_reg_1 => instruction(25 downto 21), 
+                                 Read_reg_2 => instruction(20 downto 16), Write_reg => write_reg, 
+                                 Write_data => write_data_reg, Read_data_1 => read_data_1, Read_data_2 => read_data_2); 
+
+    U_SE: signExtend port map(Q => instruction(15 downto 0), Qplus => sign_ext_imm); 
+
+    -- EXECUTION
+    U_ALU_CTRL: ALU_Control port map(ALUOp => alu_op, Funct => instruction(3 downto 0), ALU_select => alu_ctrl_sel); 
+
+    -- Manual Mux for ALU Source B (Using concurrent logic to avoid extra component if preferred, or instantiate mux2to1_32)
+    alu_in_b <= read_data_2 when alu_src = '0' else sign_ext_imm;
+
+    U_ALU: ALU port map(SrcA => read_data_1, SrcB => alu_in_b, ALUControl => alu_ctrl_sel, ALUResult => alu_out, Zero => alu_zero); [cite: 42]
+
+    -- BRANCH LOGIC
+    U_SHIFT_BR: ShiftLeft2_32 port map(Q => sign_ext_imm, Qplus => br_offset); 
+    
+    U_ADDBR: fullAdder_32 port map(A => pc_plus_4, B => br_offset, Cin => '0', S => pc_branch, Cout => open);
+
+    pc_src <= branch and alu_zero;
+    pc_jump <= pc_plus_4 when pc_src = '0' else pc_branch;
+
+    -- MEMORY & WRITEBACK
+    U_DMEM: DataMemory port map(clk => clk, MemWrite => mem_write, MemRead => mem_read, Address => alu_out, 
+                                 Write_data => read_data_2, Read_data => mem_out); 
+
+    write_data_reg <= alu_out when mem_to_reg = '0' else mem_out;
+
+    -- JUMP LOGIC
+    jump_addr_32 <= pc_plus_4(31 downto 28) & instruction(25 downto 0) & "00";
+    pc_next <= pc_jump when jump = '0' else jump_addr_32;
+
+end architecture Structural;
